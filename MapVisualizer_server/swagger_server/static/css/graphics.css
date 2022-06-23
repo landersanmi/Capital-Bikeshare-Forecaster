@@ -1,0 +1,102 @@
+#graphics_title_row{
+    height: 15%;
+}
+
+#graphics_title_label{
+    text-align: center;
+    padding-top: 1.4%;
+}
+#exit_graphics_col{
+    padding-top: 0.3%;
+    padding-right: 0.7%;
+}
+@media (max-width: 1920px) {
+    #returns_col, #availability_col{
+        margin-bottom: 40px;
+    }
+
+}
+@media (max-width: 991px) {
+    #returns_col {
+        margin-bottom: 0px;
+    }
+    #availability_col{
+        margin-bottom: 40px;
+    }
+
+}
+@media (max-width: 768px) {
+    #exit_graphics_col{
+        width: 8.3333%;
+        padding-top: 1%;
+        padding-right: 2%;
+    }
+    #graphics_title_col{
+        width: 83.3334%;
+    }
+    #blank_col{
+        width: 8.3333%;
+    }
+    #availability_col{
+        margin-bottom: 60px;
+    }
+}
+@media (max-width: 480px) {
+    #exit_graphics_col{
+        padding-bottom: 2%;
+        width: 8.3333%;
+        padding-top: 1%;
+        padding-right: 3%;
+    }
+    #graphics_title_col{
+        width: 83.3334%;
+    }
+    #blank_col{
+        width: 8.3333%;
+    }
+}
+
+.js-plotly-plot .plotly .modebar {
+    transform: translateX(-78%);
+}
+#graphics_container{
+    background-color: white;
+    width: 94% !important;
+    min-width: 422px;
+    height: 386px;
+    border-radius: 24px;
+    align-items: center;
+    margin-bottom: 14px;
+    margin-left: 14px;
+    margin-right: 14px;
+    overflow: hidden;
+}
+@media (max-width: 422px) {
+    #graphics_container{
+        width: 100% !important;
+        border-top-left-radius: 24px;
+        border-top-right-radius: 24px;
+        border-bottom-left-radius: 0px;
+        border-bottom-right-radius: 0px;
+        margin-bottom: 0px;
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+}
+#graphics_row{
+    padding-left: 0.5%;
+    padding-right: 0.5%;
+    padding-bottom: 1%;
+    height: 100%;
+    overflow:unset;
+}
+@media (max-width: 1920px) {
+    #graphics_row{
+        overflow:scroll;
+    }
+}
+
+#lastweek_col, #rentals_col, #returns_col, #availability_col{
+    background-color: white;
+    height: 90%;
+}

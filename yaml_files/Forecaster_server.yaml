@@ -1,0 +1,193 @@
+openapi: 3.0.1
+
+info:
+  title: Forecaster |
+    This API handles the information related with bike rentals, returns and forecasted data.
+  version: 1.1.0
+
+tags:
+  - name: RawData
+    description: Operations related with the manipulation of rentals, returns and forecasted data. 
+
+paths:
+  # Forecasted activity information of a station in a given day
+  /api/v1/forecast/{date}/{station_id}:     
+    parameters:
+      - $ref: "#/components/parameters/date"
+      - $ref: "#/components/parameters/station_id"
+
+    get:
+      summary: Get forecast data
+      description: Retrieve predictions for a station in a given day
+      tags: ["RawData"]
+      operationId: get-forecast
+      responses:
+        "200":
+          description: "OK"
+          content:
+            application/json:
+              schema:
+                $ref : "#/components/schemas/trip_day_data"
+        "400":
+          description: "The provided day or station was not found"
+          content:
+            text/html:
+              schema:
+                $ref: "#/components/schemas/errorMessage"
+              example: "There is an error in the forecast process"
+ 
+  # Real activity information of a station in a given day
+  /api/v1/real/{date}/{station_id}:     
+    parameters:
+      - $ref: "#/components/parameters/date"
+      - $ref: "#/components/parameters/station_id"
+      
+    get:
+      summary: Get real data
+      description: Retrieve real data for a station in a given day
+      tags: ["RawData"]
+      operationId: get-real
+      responses:
+        "200":
+          description: "OK"
+          content:
+            application/json:
+              schema:
+                $ref : "#/components/schemas/trip_day_data"
+        "400":
+          description: "The provided day or station was not found"
+          content:
+            text/html:
+              schema:
+                $ref: "#/components/schemas/errorMessage"
+              example: "There is an error in the real data retrieve process"
+
+  # Last week activity information of a station in a given day
+  /api/v1/lastweek/{date}/{station_id}:     
+    parameters:
+      - $ref: "#/components/parameters/date"
+      - $ref: "#/components/parameters/station_id"
+      
+    get:
+      summary: Get last week data
+      description: Retrieve last week real data for a station in a given day
+      tags: ["RawData"]
+      operationId: get-lastweek
+      responses:
+        "200":
+          description: "OK"
+          content:
+            application/json:
+              schema:
+                $ref : "#/components/schemas/trip_day_data"
+        "400":
+          description: "The provided day or station was not found"
+          content:
+            text/html:
+              schema:
+                $ref: "#/components/schemas/errorMessage"
+              example: "There is an error in the last week data retrieve process"
+
+  # Last week activity information of a station in a given day
+  /api/v1/weather/{date}:
+    parameters:
+      - $ref: "#/components/parameters/date"
+
+    get:
+      summary: Get weather data
+      description: Retrieve the weather data for a given date
+      tags: [ "RawData" ]
+      operationId: get-weather
+      responses:
+        "200":
+          description: "OK"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/weather_day_data"
+        "400":
+          description: "The provided day was not found"
+          content:
+            text/html:
+              schema:
+                $ref: "#/components/schemas/errorMessage"
+              example: "There is an error in the weather data retrieve process"
+
+
+components:
+
+  parameters:
+    date:
+      description: A specific date
+      name: date
+      in: path
+      required: true
+      schema:
+        $ref: "#/components/schemas/date"
+
+    station_id:
+      description: ID of the station
+      name: station_id
+      in: path
+      required: true
+      schema:
+        $ref: "#/components/schemas/station_id"
+
+  schemas:
+    date:
+      type: string
+
+    station_id:
+      type: string
+       
+    trip_day_data:
+      type: object
+      properties:
+        date: 
+          type: string
+          description: Date of related trips data
+        station_id:
+          type: string
+          description: Id of the station
+        rentals:
+          type: array
+          items:
+            $ref: "#/components/schemas/measure"
+        returns:
+          type: array
+          items:
+            $ref: "#/components/schemas/measure"
+
+    weather_day_data:
+      type: object
+      properties:
+        date:
+          type: string
+          description: Date of related weather data
+        temperatures:
+          type: array
+          items:
+            $ref: "#/components/schemas/measure"
+        humidities:
+          type: array
+          items:
+            $ref: "#/components/schemas/measure"
+
+    measure:
+      type: object
+      properties:
+        hour:
+          type: string
+          description: Hour of the data
+        value:
+          type: string
+          description: Value of the measure in the hour
+      
+    errorMessage:
+      type: string
+      maxLength: 256
+      description: A text message describing an error
+    
+    okMessage:
+      type: string
+      description: A message that describes an OK response

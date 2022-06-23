@@ -1,0 +1,39 @@
+#sysinfo_container{
+    width: 350px;
+    height: 390px;
+    background-color: white;
+    border-radius: 24px;
+    z-index: 1 !important;
+}
+#exit_sysinfo_col{
+    padding-bottom: 2%;
+}
+#exit_sysinfo_btn {
+    padding: 0.4rem 0.4rem !important;
+}
+
+@media (max-width: 767px) {
+    #exit_sysinfo_col{
+        padding-bottom: 2%;
+        width: 8.3333%;
+    }
+    #name_col{
+        width: 83.3334%;
+    }
+    #blank_col{
+        width: 8.3333%;
+    }
+}
+
+#separator{
+    margin: 0.1%;
+}
+#email_row{
+    padding-top: 3.5%;
+}
+#name_value{
+    padding-top: 1.6%
+}
+#email_value, #phone_value, #startdate_value, #timezone_value, #url_value{
+    font-size: small;
+}

@@ -1,0 +1,11 @@
+#alert_container{
+    visibility: hidden;
+    position: absolute;
+    margin-top: 14px;
+    padding-bottom: 7px;
+    z-index: -1;
+}
+
+#alert_message{
+    margin-bottom: 0rem !important;
+}

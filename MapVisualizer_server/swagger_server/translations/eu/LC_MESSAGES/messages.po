@@ -1,0 +1,160 @@
+# Basque translations for CB Forecaster.
+# Copyright (C) 2022
+# This file is distributed under the same license as the CB Forecaster project.
+# Lander San Millan, 2022.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: 1.0\n"
+"Report-Msgid-Bugs-To: landersanmillan@opendeusto.es\n"
+"POT-Creation-Date: 2022-05-07 19:35+0200\n"
+"PO-Revision-Date: 2022-05-07 19:37+0200\n"
+"Last-Translator: Lander San Millán\n"
+"Language: eu\n"
+"Language-Team: es\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.10.1\n"
+
+#: static/js/map.js:216
+msgid "ERROR_STATION_INFO"
+msgstr "Errorea estazioetako informazioa kargatzean, egiaztatu datu-basearen zerbitzaria."
+
+#: static/js/map.js:253
+msgid "ERROR_STATIONS"
+msgstr "Errorea estazioak kargatzean, egiaztatu datu-basearen zerbitzaria."
+
+#: static/js/map.js:282
+msgid "ERROR_STATION"
+msgstr "Errorea estazioa kargatzean, sartu existitzen den bat."
+
+#: static/js/map.js:317
+msgid "ERROR_PREDICTIONS"
+msgstr "Errorea iragarpenak kargatzean, baliteke Forecaster edo datu-basearen zerbitzariak aktibo ez egotea."
+
+#: static/js/map.js:349
+msgid "ERROR_SYSTEM_INFO"
+msgstr "Errorea Capital Bikeshare sistemari buruzko informazioa kargatzean."
+
+#: static/js/map.js:382
+msgid "DATE"
+msgstr "Data"
+
+#: static/js/map.js:382
+msgid "STATION"
+msgstr "Geltokia"
+
+#: static/js/map.js:391
+msgid "ERROR_ACTUAL_DAY"
+msgstr "Errorea egungo eguneko datu errealak kargatzean, egiaztatu datu-basearen zerbitzaria."
+
+#: static/js/map.js:426
+msgid "ERROR_LAST_WEEK"
+msgstr "Errorea joan den asteko datu errealak kargatzean, egiaztatu datu-basearen zerbitzaria."
+
+#: static/js/map.js:445
+msgid "DOCKS"
+msgstr "Ainguraleku"
+
+#: static/js/map.js:572
+msgid "RENTALS_FORECAST_AXIS_LABEL"
+msgstr "Alokairuen iragarpena"
+
+#: static/js/map.js:573
+msgid "RENTALS_REAL_AXIS_LABEL"
+msgstr "Benetako alokairuak"
+
+#: static/js/map.js:579
+msgid "RENTALS_TITLE"
+msgstr "Alokairuak | Iragarpenak eta Benetakoak"
+
+#: static/js/map.js:592
+msgid "RENTALS"
+msgstr "Alokairuak"
+
+#: static/js/map.js:601
+msgid "RETURNS_FORECAST_AXIS_LABEL"
+msgstr "Itzulketen iragarpena"
+
+#: static/js/map.js:602
+msgid "RETURNS_REAL_AXIS_LABEL"
+msgstr "Benetako itzulpenak"
+
+#: static/js/map.js:607
+msgid "RETURNS_TITLE"
+msgstr "Itzulpenak | Iragarpenak eta Benetakoak"
+
+#: static/js/map.js:620
+msgid "RETURNS"
+msgstr "Itzulpenak"
+
+#: static/js/map.js:639
+msgid "AVAILABILITY_FORECAST_AXIS_LABEL"
+msgstr "Erabilgarritasunaren iragarpena"
+
+#: static/js/map.js:640
+msgid "AVAILABILITY_REAL_AXIS_LABEL"
+msgstr "Benetako erabilgarritasuna"
+
+#: static/js/map.js:645
+msgid "AVAILABILITY_TITLE"
+msgstr "Erabilgarritasna | Iragarpenak eta Benetakoak"
+
+#: static/js/map.js:657
+msgid "AVAILABILITY"
+msgstr "Erabilgarritasuna"
+
+#: static/js/map.js:674
+msgid "LASTWEEK_RENTALS_AXIS_LABEL"
+msgstr "Alokairuak joan den astean"
+
+#: static/js/map.js:675
+msgid "LASTWEEK_RETURNS_AXIS_LABEL"
+msgstr "Itzulpenak joan den astean"
+
+#: static/js/map.js:680
+msgid "LASTWEEK_TITLE"
+msgstr "Alokairuak eta Itzulpenak | Joan den astea"
+
+#: static/js/map.js:693
+msgid "LASTWEEK"
+msgstr "Joan den astea"
+
+#: templates/base.html:37
+msgid "ENABLE_JS"
+msgstr "JavaScript aktibatu behar duzu Capital Bikeshare Forecaster egoki ikusteko."
+
+#: templates/filter.html:15
+msgid "SELECT_STATION"
+msgstr "Geltoki bat aukeratu..."
+
+#: templates/filter.html:16
+msgid "SEARCH-SELECT"
+msgstr "Bilatu edo aukeratu"
+
+#: templates/filter.html:22
+msgid "SELECT_DATE"
+msgstr "Egun bat aukeratu..."
+
+#: templates/systemInfo.html:16
+msgid "EMAIL"
+msgstr "Posta elektronikoa"
+
+#: templates/systemInfo.html:20
+msgid "PHONE"
+msgstr "Telefono zenbakia"
+
+#: templates/systemInfo.html:24
+msgid "START_DATE"
+msgstr "Hasiera-data"
+
+#: templates/systemInfo.html:28
+msgid "TIMEZONE"
+msgstr "Ordu zona"
+
+#: templates/systemInfo.html:32
+msgid "URL"
+msgstr "Url"
+

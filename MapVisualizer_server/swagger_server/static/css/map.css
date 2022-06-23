@@ -1,0 +1,31 @@
+/* Always set the map height explicitly to define the size of the div
+* element that contains the map. */
+#map {
+    height: 100%;
+    min-height: 810px;
+}
+
+/* Optional: Makes the sample page fill the window. */
+html,body{
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+#separator{
+    margin: 0.1%;
+}
+#dock_img{
+    width: 110px;
+    height: 70px;
+}
+
+#bodyContent{
+    text-align: center;
+}
+
+#content{
+    align-items: center;
+}
+
+

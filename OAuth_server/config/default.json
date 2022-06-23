@@ -1,0 +1,19 @@
+{
+    "ServerSection": {
+      "IP": "127.0.0.1",
+      "port": 9090
+    },
+    "PathsSection": {
+      "logPath": "/logs/OAuth_server.log"
+    },
+    "MapVisualizerServerSection": {
+      "IP": "192.168.0.17",
+      "port": 7070
+    },
+    "DatabaseSection": {
+      "IP": "localhost",
+      "port": 27017,
+      "oauthName": "OAUTH",
+      "usersCollection": "Users"
+    }
+}

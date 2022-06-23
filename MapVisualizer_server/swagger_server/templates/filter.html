@@ -1,0 +1,27 @@
+<!--  FILTER  -->
+<div class= container id="filter_container">
+    <div class = "row">
+        <div class = "col d-flex justify-content-center" id="title_col">
+            <img src="{{ url_for('static', filename='img/CapitalBikeshare.svg') }}" alt="Capital Bikeshare logo" id="CB_img">
+        </div>
+    </div>
+    <div class = "row">
+        <div class = "col d-flex justify-content-center">
+            <h4 id="title"> Forecaster </h4>
+        </div>
+    </div>
+    <div class = "row">
+        <div class = "col col-lg-3" id="station_col">
+            <label for="input_station" id="label_input_station" class="form-label"> {{ gettext('SELECT_STATION') }}</label>
+            <input list="selector_station" id="input_station" placeholder="{{ gettext('SEARCH-SELECT') }}">
+            <datalist id="selector_station"></datalist>
+        </div>
+    </div>
+    <div class = "row">
+        <div class = "col col-lg-3" id="calendar_col">
+            <label for="calendar" id="label_calendar" class="form-label">{{ gettext('SELECT_DATE') }}</label>
+            <input type="hidden" id="input_calendar">
+            <div id="calendar"></div>
+        </div>
+    </div>
+</div>

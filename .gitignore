@@ -1,0 +1,3 @@
+data/*
+OAuth_server/node_modules/*
+./keys.json

@@ -1,0 +1,90 @@
+<!-- views/pages/auth.ejs -->
+<!doctype html>
+<html>
+<head>
+    
+    <!-- TAB Properties-->
+    <link rel="icon" href="/img/cb_logo.png">
+    <title>SignIn Capital Bikeshare Forecaster</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- GOOGLE FONTS-->
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans" />
+
+    <!-- FONTAWESOME -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- JQUERY-->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+
+    <!-- BOOTSTRAP -->
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+    <!-- CSS & LESS -->
+    <link rel="stylesheet" type="text/css" href="/css/auth.css" /> 
+    <link rel="stylesheet/less" type="text/css" href="/css/auth.less" /> 
+
+    <!-- LESS.JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/less.js/4.1.1/less.js" ></script>
+
+    <!-- JS -->
+    <script src="/js/auth.js"></script>  
+
+</head>
+<body>
+
+    <noscript> <%=translation.ENABLE_JS%> </noscript>
+
+    <div class="container-fluid" id="language_container">
+        <div class="row justify-content-end" id="language_row">
+            <i class="fa fa-language" aria-hidden="true" id="language_icon"></i>
+            <div class="col-md-2 d-flex" id="english_col">
+                <a href="?clang=en"> EN </a>
+            </div>
+            <div class="col-md-2 d-flex" id="euskera_col">
+                <a href="?clang=eu_ES"> EU </a>
+            </div>
+            <div class="col-md-2 d-flex" id="español_col">
+                <a href="?clang=es"> ES </a>
+            </div>
+        </div>
+    </div>
+    <input id="lang" type="hidden"></input>
+
+    <div class="container">
+        <div id="loginbox">
+            <div class="row justify-content-center">                
+                <div class="mapsIcon">
+                    <img src="/img/marker.png"/>
+                </div>
+            </div>
+            <div class="panel panel-primary" >
+                <div class="panel-heading">
+                    <div class="panel-title text-center"> <h3> <%=translation.WELCOME%> </h3></div>
+                </div>     
+                <div class="panel-body">
+                    <div class="d-flex justify-content-center">
+                        <a href="/auth/google">
+                            <div class="google-btn">
+                                <div class="google-icon-wrapper">
+                                    <img class="google-icon" src="/img/GoogleLogo.svg"/>
+                                </div>      
+                                <p class="btn-text"><b> <%=translation.LOGIN_GOOGLE%> </b></p>  
+                            </div>
+                        </a>
+                    </div>   
+                </div>     
+            </div>
+        </div>
+    </div>
+
+    <div id="particles"></div>
+
+</body>
+</html> 
+
+
+
+
+

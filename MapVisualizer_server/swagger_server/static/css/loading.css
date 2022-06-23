@@ -1,0 +1,8 @@
+#loading_div{
+    visibility:hidden;
+    display:none;
+    width: 5rem;
+    height: 5rem;
+    top:45.7% !important;
+    left: 48.5% !important;
+}

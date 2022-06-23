@@ -1,0 +1,161 @@
+openapi: 3.0.1
+
+info:
+  title: Map Visualizer |
+    This API server shows the information of a bike-sharing system and his stations.
+  version: 1.1.0
+
+tags:
+  - name: RawData
+    description: Operations related with the manipulation of raw stations and system data. 
+
+paths:
+  
+  # Information of Washington DC bike-sharing system
+  /api/v1/system_information:     
+    get:
+      summary: Get system information
+      description: Retrieve all the system information from the GBFS
+      tags: ["RawData"]
+      operationId: get-system_information
+      responses:
+        "200":
+          description: "OK"
+          content:
+            application/json:
+              schema:
+                $ref : "#/components/schemas/system_information"
+        "400":
+          description: "The Wahington DC GBFS was not found"
+          content:
+            text/html:
+              schema:
+                $ref: "#/components/schemas/errorMessage"
+              example: "Wahington DC GBFS not found"
+ 
+  # Station information
+  /api/v1/station_information/{station_id}:
+    parameters:
+      - $ref: "#/components/parameters/station_id"
+      
+    get:
+      summary: Get station information
+      description: Retrieve all the information of a specific station
+      tags: ["RawData"]
+      operationId: get-station_information
+      responses:
+        "200":
+          description: "OK"
+          content:
+            application/json:
+              schema:
+                $ref : "#/components/schemas/station_information"
+        "400":
+          description: "The provided station was not found"
+          content:
+            text/html:
+              schema:
+                $ref: "#/components/schemas/errorMessage"
+              example: "Inexistent station Id"
+
+  # List of stations
+  /api/v1/stations:    
+    get:
+      summary: Get list of stations
+      description: Retrieve all the stations information
+      tags: ["RawData"]
+      operationId: get-stations
+      responses:
+        "200":
+          description: "OK"
+          content:
+            application/json:
+              schema:
+                $ref : "#/components/schemas/stations"
+        "400":
+          description: "The stations were not found"
+          content:
+            text/html:
+              schema:
+                $ref: "#/components/schemas/errorMessage"
+              example: "The stations were not found"
+
+
+components:
+
+  parameters:
+    station_id:
+      description: ID of the station
+      name: station_id
+      in: path
+      required: true
+      schema:
+        $ref: "#/components/schemas/station_id"
+
+  schemas:
+    station_id:
+      type: string
+       
+    system_information:
+      type: object
+      properties:
+        name: 
+          type: string
+          description: Name of the company
+        operator:
+          type: string
+          description: Operator of the company
+        url:
+          type: string
+          description: URL to the company homepage
+        phone_number:
+          type: string
+          description: Phone of the company
+        email:
+          type: string
+          description: Email of the company
+        timezone:
+          type: string
+          description: Timezone of the company
+        license_url:
+          type: string
+          description: URL to the company license
+        start_date:
+          type: string
+          description: The creation day of the system
+
+    stations:
+      type: object
+      properties:
+        stations:  
+          type: array
+          items:
+            $ref: "#/components/schemas/station_information"
+
+    station_information:
+      type: object     
+      properties:       
+        station_id: 
+          type: string
+          description: ID of the Station
+        name:
+          type: string
+          description: Name of the Station
+        lat:
+          type: string
+          description: Latitude of the Station location
+        lon:
+          type: string
+          description: Longitude of the Station location
+        capacity:
+          type: string
+          description: Number of bikes that can be locked in the station
+ 
+    errorMessage:
+      type: string
+      maxLength: 256
+      description: A text message describing an error
+    
+    okMessage:
+      type: string
+      description: A message that describes an OK response

@@ -1,0 +1,36 @@
+<!-- SYSTEM INFO -->
+<div class="card" id="sysinfo_container">
+    <div class="card-body">
+        <div class = "row">
+            <div class="col-md-1 d-flex" id="blank_col"></div>
+            <div class="col-md-10 d-flex justify-content-center" id="name_col"><h4 class="card-title" id="name_value">NAME</h4></div>
+            <div class="col-md-1 d-flex justify-content-end" id="exit_sysinfo_col">
+                <button type="button" class="btn-close btn-lg" aria-label="Close" id="exit_sysinfo_btn"></button>
+            </div>
+        </div>
+        <div class = "row">
+            <div class = "col-md-12 d-flex justify-content-center" id="operator_col"><h6 class="card-subtitle mb-2 text-muted" id="operator_value">Operator</h6></div>
+        </div>
+        <hr id="separator">
+        <div class = "row" id="email_row">
+            <div class = "col-md-12 d-flex justify-content-center" id="email_label_col"><h6><i class="fa fa-solid fa-at"></i>  {{ gettext('EMAIL') }} </h6></div>
+            <div class = "col-md-12 d-flex justify-content-center" id="email_value_col"><p id="email_value"></p></div>
+        </div>
+        <div class = "row" id="phone_row">
+            <div class = "col-md-12 d-flex justify-content-center" id="phone_label_col"><h6><i class="fa fa-solid fa-phone"></i>  {{ gettext('PHONE') }} </h6></div>
+            <div class = "col-md-12 d-flex justify-content-center" id="phone_value_col"><p id="phone_value"></p></div>
+        </div>
+        <div class = "row" id="startdate_row">
+            <div class = "col-md-12 d-flex justify-content-center" id="startdate_label_col"><h6><i class="fa fa-solid fa-calendar"></i>  {{ gettext('START_DATE') }} </h6></div>
+            <div class = "col-md-12 d-flex justify-content-center" id="startdate_value_col"><p id="startdate_value"></p></div>
+        </div>
+        <div class = "row" id="timezone_row">
+            <div class = "col-md-12 d-flex justify-content-center" id="timezone_label_col"> <h6><i class="fa fa-solid fa-globe"></i>  {{ gettext('TIMEZONE') }} </h6></div>
+            <div class = "col-md-12 d-flex justify-content-center" id="timezone_value_col"><p id="timezone_value"></p></div>
+        </div>
+        <div class = "row" id="url_row">
+            <div class = "col-md-12 d-flex justify-content-center" id="url_label_col"><h6><i class="fa fa-solid fa-link"></i>  {{ gettext('URL') }} </h6></div>
+            <div class = "col-md-12 d-flex justify-content-center" id="url_value_col"><a id="url_value"></a></div>
+        </div>
+    </div>
+</div>

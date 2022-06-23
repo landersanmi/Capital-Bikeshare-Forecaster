@@ -1,0 +1,160 @@
+# Spanish translations for CB Forecaster.
+# Copyright (C) 2022
+# This file is distributed under the same license as the CB Forecaster project.
+# Lander San Millan, 2022.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: 1.0\n"
+"Report-Msgid-Bugs-To: landersanmillan@opendeusto.es\n"
+"POT-Creation-Date: 2022-05-07 19:35+0200\n"
+"PO-Revision-Date: 2022-05-07 19:37+0200\n"
+"Last-Translator: Lander San Millán\n"
+"Language: es\n"
+"Language-Team: es\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.10.1\n"
+
+#: static/js/map.js:216
+msgid "ERROR_STATION_INFO"
+msgstr "An error happened loading stations data, check DB server connection."
+
+#: static/js/map.js:253
+msgid "ERROR_STATIONS"
+msgstr "An error happened loading stations, check DB server connection."
+
+#: static/js/map.js:282
+msgid "ERROR_STATION"
+msgstr "Error loading the station, provide an existing one."
+
+#: static/js/map.js:317
+msgid "ERROR_PREDICTIONS"
+msgstr "An error happened loading predictions, probably Forecaster or DB server are inactive."
+
+#: static/js/map.js:349
+msgid "ERROR_SYSTEM_INFO"
+msgstr "Error loading the information about the Capital Bikeshare system."
+
+#: static/js/map.js:382
+msgid "DATE"
+msgstr "Date"
+
+#: static/js/map.js:382
+msgid "STATION"
+msgstr "Station"
+
+#: static/js/map.js:391
+msgid "ERROR_ACTUAL_DAY"
+msgstr "Error loading real data of selected date, check DB connection."
+
+#: static/js/map.js:426
+msgid "ERROR_LAST_WEEK"
+msgstr "Error loading real data of last week, check DB connection."
+
+#: static/js/map.js:445
+msgid "DOCKS"
+msgstr "Docks"
+
+#: static/js/map.js:572
+msgid "RENTALS_FORECAST_AXIS_LABEL"
+msgstr "Forecasted rentals"
+
+#: static/js/map.js:573
+msgid "RENTALS_REAL_AXIS_LABEL"
+msgstr "Real rentals"
+
+#: static/js/map.js:579
+msgid "RENTALS_TITLE"
+msgstr "Rentals | Forecast & Real"
+
+#: static/js/map.js:592
+msgid "RENTALS"
+msgstr "Rentals"
+
+#: static/js/map.js:601
+msgid "RETURNS_FORECAST_AXIS_LABEL"
+msgstr "Forecasted returns"
+
+#: static/js/map.js:602
+msgid "RETURNS_REAL_AXIS_LABEL"
+msgstr "Real returns"
+
+#: static/js/map.js:607
+msgid "RETURNS_TITLE"
+msgstr "Returns | Forecast & Real"
+
+#: static/js/map.js:620
+msgid "RETURNS"
+msgstr "Returns"
+
+#: static/js/map.js:639
+msgid "AVAILABILITY_FORECAST_AXIS_LABEL"
+msgstr "Forecasted availability"
+
+#: static/js/map.js:640
+msgid "AVAILABILITY_REAL_AXIS_LABEL"
+msgstr "Real availability"
+
+#: static/js/map.js:645
+msgid "AVAILABILITY_TITLE"
+msgstr "Availability | Forecast & Real"
+
+#: static/js/map.js:657
+msgid "AVAILABILITY"
+msgstr "Availability"
+
+#: static/js/map.js:674
+msgid "LASTWEEK_RENTALS_AXIS_LABEL"
+msgstr "Last week rentals"
+
+#: static/js/map.js:675
+msgid "LASTWEEK_RETURNS_AXIS_LABEL"
+msgstr "Last week returns"
+
+#: static/js/map.js:680
+msgid "LASTWEEK_TITLE"
+msgstr "Rentals & Returns | Last week"
+
+#: static/js/map.js:693
+msgid "LASTWEEK"
+msgstr "Last week"
+
+#: templates/base.html:37
+msgid "ENABLE_JS"
+msgstr "You need to enable JavaScript to run Capital Bikeshare Forecaster."
+
+#: templates/filter.html:15
+msgid "SELECT_STATION"
+msgstr "Select a station..."
+
+#: templates/filter.html:16
+msgid "SEARCH-SELECT"
+msgstr "Search or select"
+
+#: templates/filter.html:22
+msgid "SELECT_DATE"
+msgstr "Select a day..."
+
+#: templates/systemInfo.html:16
+msgid "EMAIL"
+msgstr "Email"
+
+#: templates/systemInfo.html:20
+msgid "PHONE"
+msgstr "Phone"
+
+#: templates/systemInfo.html:24
+msgid "START_DATE"
+msgstr "Start date"
+
+#: templates/systemInfo.html:28
+msgid "TIMEZONE"
+msgstr "Timezone"
+
+#: templates/systemInfo.html:32
+msgid "URL"
+msgstr "Url"
+

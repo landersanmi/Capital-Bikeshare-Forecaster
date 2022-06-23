@@ -1,0 +1,257 @@
+openapi: 3.0.1
+info:
+  title: "Forecaster | This API handles the information related with bike rentals,\
+    \ returns and forecasted data."
+  version: 1.1.0
+servers:
+- url: /
+tags:
+- name: RawData
+  description: "Operations related with the manipulation of rentals, returns and forecasted\
+    \ data."
+paths:
+  /api/v1/forecast/{date}/{station_id}:
+    get:
+      tags:
+      - RawData
+      summary: Get forecast data
+      description: Retrieve predictions for a station in a given day
+      operationId: get_forecast
+      parameters:
+      - name: date
+        in: path
+        description: A specific date
+        required: true
+        style: simple
+        explode: false
+        schema:
+          $ref: '#/components/schemas/date'
+      - name: station_id
+        in: path
+        description: ID of the station
+        required: true
+        style: simple
+        explode: false
+        schema:
+          $ref: '#/components/schemas/station_id'
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/trip_day_data'
+        "400":
+          description: The provided day or station was not found
+          content:
+            text/html:
+              schema:
+                $ref: '#/components/schemas/errorMessage'
+              example: There is an error in the forecast process
+      x-openapi-router-controller: swagger_server.controllers.raw_data_controller
+  /api/v1/real/{date}/{station_id}:
+    get:
+      tags:
+      - RawData
+      summary: Get real data
+      description: Retrieve real data for a station in a given day
+      operationId: get_real
+      parameters:
+      - name: date
+        in: path
+        description: A specific date
+        required: true
+        style: simple
+        explode: false
+        schema:
+          $ref: '#/components/schemas/date'
+      - name: station_id
+        in: path
+        description: ID of the station
+        required: true
+        style: simple
+        explode: false
+        schema:
+          $ref: '#/components/schemas/station_id'
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/trip_day_data'
+        "400":
+          description: The provided day or station was not found
+          content:
+            text/html:
+              schema:
+                $ref: '#/components/schemas/errorMessage'
+              example: There is an error in the real data retrieve process
+      x-openapi-router-controller: swagger_server.controllers.raw_data_controller
+  /api/v1/lastweek/{date}/{station_id}:
+    get:
+      tags:
+      - RawData
+      summary: Get last week data
+      description: Retrieve last week real data for a station in a given day
+      operationId: get_lastweek
+      parameters:
+      - name: date
+        in: path
+        description: A specific date
+        required: true
+        style: simple
+        explode: false
+        schema:
+          $ref: '#/components/schemas/date'
+      - name: station_id
+        in: path
+        description: ID of the station
+        required: true
+        style: simple
+        explode: false
+        schema:
+          $ref: '#/components/schemas/station_id'
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/trip_day_data'
+        "400":
+          description: The provided day or station was not found
+          content:
+            text/html:
+              schema:
+                $ref: '#/components/schemas/errorMessage'
+              example: There is an error in the last week data retrieve process
+      x-openapi-router-controller: swagger_server.controllers.raw_data_controller
+  /api/v1/weather/{date}:
+    get:
+      tags:
+      - RawData
+      summary: Get weather data
+      description: Retrieve the weather data for a given date
+      operationId: get_weather
+      parameters:
+      - name: date
+        in: path
+        description: A specific date
+        required: true
+        style: simple
+        explode: false
+        schema:
+          $ref: '#/components/schemas/date'
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/weather_day_data'
+        "400":
+          description: The provided day was not found
+          content:
+            text/html:
+              schema:
+                $ref: '#/components/schemas/errorMessage'
+              example: There is an error in the weather data retrieve process
+      x-openapi-router-controller: swagger_server.controllers.raw_data_controller
+components:
+  schemas:
+    date:
+      type: string
+    station_id:
+      type: string
+    trip_day_data:
+      type: object
+      properties:
+        date:
+          type: string
+          description: Date of related trips data
+        station_id:
+          type: string
+          description: Id of the station
+        rentals:
+          type: array
+          items:
+            $ref: '#/components/schemas/measure'
+        returns:
+          type: array
+          items:
+            $ref: '#/components/schemas/measure'
+      example:
+        date: date
+        station_id: station_id
+        returns:
+        - null
+        - null
+        rentals:
+        - hour: hour
+          value: value
+        - hour: hour
+          value: value
+    weather_day_data:
+      type: object
+      properties:
+        date:
+          type: string
+          description: Date of related weather data
+        temperatures:
+          type: array
+          items:
+            $ref: '#/components/schemas/measure'
+        humidities:
+          type: array
+          items:
+            $ref: '#/components/schemas/measure'
+      example:
+        date: date
+        temperatures:
+        - hour: hour
+          value: value
+        - hour: hour
+          value: value
+        humidities:
+        - null
+        - null
+    measure:
+      type: object
+      properties:
+        hour:
+          type: string
+          description: Hour of the data
+        value:
+          type: string
+          description: Value of the measure in the hour
+      example:
+        hour: hour
+        value: value
+    errorMessage:
+      maxLength: 256
+      type: string
+      description: A text message describing an error
+    okMessage:
+      type: string
+      description: A message that describes an OK response
+  parameters:
+    date:
+      name: date
+      in: path
+      description: A specific date
+      required: true
+      style: simple
+      explode: false
+      schema:
+        $ref: '#/components/schemas/date'
+    station_id:
+      name: station_id
+      in: path
+      description: ID of the station
+      required: true
+      style: simple
+      explode: false
+      schema:
+        $ref: '#/components/schemas/station_id'
+

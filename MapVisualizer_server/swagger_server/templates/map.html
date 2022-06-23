@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+
+{% block css %}
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/map.css') }}" >
+
+    <!-- FILTER -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/filter.css') }}" >
+    <!-- SETTINGS -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/settings.css') }}" >
+    <!-- GRAPHICS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/graphics.css') }}" >
+    <!-- SYSTEM_INFO -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/systemInfo.css') }}" >
+    <!-- LOADING -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/loading.css') }}" >
+    <!-- ALERT -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/alert.css') }}" >
+{% endblock %}
+
+{% block js %}
+    <!-- GOOGLE MAPS -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <script src="https://unpkg.com/three@0.129.0/build/three.min.js"></script>
+    <script async defer src="{{'https://maps.googleapis.com/maps/api/js?key=' + MAPS_API_KEY + '&callback=initMap&'}}"></script>
+
+    <script src="{{ url_for('static', filename='js/map.js') }}"> </script>
+
+    <!-- FILTER -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/locales/bootstrap-datepicker.es.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/locales/bootstrap-datepicker.eu.min.js"></script>
+    <script src="{{ url_for('static', filename='js/filter.js') }}"> </script>
+    <!-- SETTINGS -->
+    <script src="{{ url_for('static', filename='js/settings.js') }}"> </script>
+    <!-- GRAPHICS -->
+    <script src="https://cdn.plot.ly/plotly-2.11.1.min.js"></script>
+    <!-- SYSTEM_INFO -->
+    <script type="module" src="{{ url_for('static', filename='js/systemInfo.mjs') }}"> </script>
+    <!-- ALERT -->
+    <script src="{{ url_for('static', filename='js/alert.js') }}"></script>
+{% endblock %}
+
+{% block content %}
+
+    <p hidden id="token">{{TOKEN}}</p>
+    <p hidden id="language">{{LANGUAGE}}</p>
+
+    {% include 'filter.html' %}
+    {% include 'settings.html' %}
+    {% include 'graphics.html' %}
+    {% include 'systemInfo.html' %}
+    {% include 'loading.html' %}
+    {% include 'alert.html' %}
+
+    <!--  MAP  -->
+    <div id="map"></div>
+
+{% endblock %}
+
+
